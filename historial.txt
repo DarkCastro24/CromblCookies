@@ -1,0 +1,29 @@
+CREATE OR REPLACE FUNCTION calcularTotal(idpedido int)
+RETURNS money
+LANGUAGE plpgsql
+AS $$
+DECLARE
+total money := (SELECT SUM(preciounitario*cantidad) FROM detallepedidos WHERE pedido = idpedido);
+BEGIN 
+	RETURN total;
+END
+$$;
+
+select calcularTotal(49) as total
+
+select * from clientes
+
+-- Consulta para cargar el historial de cada cliente 
+SELECT f.idfactura, f.fecha,e.estadofactura as estado, COALESCE(calcularTotal(idfactura),CAST(0 as money)) as Total
+FROM facturas f 
+INNER JOIN estadofactura e on f.estado = e.idestado
+WHERE f.cliente = 51
+ORDER BY idfactura DESC
+
+-- Consulta para cargar el detalle de un pedido
+SELECT iddetallefactura, pedido, p.producto,m.marca, preciounitario, d.cantidad, (preciounitario*d.cantidad) as subtotal,p.imagen 
+FROM detallepedidos d
+INNER JOIN productos p ON d.producto = p.idproducto
+INNER JOIN marcas m ON m.idmarca = p.marca
+WHERE pedido = 49
+ORDER BY (preciounitario*d.cantidad) desc

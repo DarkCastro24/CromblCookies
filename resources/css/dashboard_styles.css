@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+.navbarColor{
+  background-color: rgb(10, 23, 51);
+}
+
+.navbarColor{
+  background-color: rgb(10, 23, 51);
+  height:66px;
+}
+
+#navbar img{
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 20px;
+  max-height: 270px;
+  max-width:  240px;
+}
+
+.logo-submenu{
+   max-height:120px;
+   max-width: 120px;
+   display:block;
+   margin:auto;
+}
+
+#mobile-sidenav p{
+   padding-right:50px;
+}
+
+input:focus+label {
+  color: #0A1733 !important;
+}
+
+input:focus {
+  border-bottom: 1px solid #0A1733 !important;
+  box-shadow: 0 1px 0 0 #0A1733 !important
+}
+
+.input-field .prefix.active {
+  color:  #0A1733;
+}
+
+
