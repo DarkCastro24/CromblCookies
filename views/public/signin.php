@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas del documento.
 require_once('../../app/helpers/public_page.php');
 // Se imprime la plantilla del encabezado enviando el título de la página web.
-Public_Page::headerTemplate('Gamebridge | Inicio sesión','Iniciar sesión');
+Public_Page::headerTemplate('CromblCookies | Inicio sesión','Iniciar sesión');
 ?>
 
 <link type="text/css" rel="stylesheet" href="../../resources/css/login_styles.css" />

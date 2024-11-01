@@ -1,4 +1,13 @@
-## Esta demo ha sido desarrollada con las siguientes herramientas:
+# Proyecto de Software
+
+Este proyecto fue desarrollado como parte de la asignatura Seguridad en Entornos de Desarrollo.
+
+## Integrantes del Proyecto
+- Diego Eduardo Castro Quintanilla 00117322
+- Katherin Gabriela Perez Baires 00141621
+- Alison Aracely Argueta Flores 00076422
+
+## El sistema ha sido desarrollado utilizando las siguientes herramientas:
 - XAMPP v8.0.0 (PHP 8.0.0 y Apache 2.4.46)
 - PostgreSQL 15 con pgAdmin 4
 - Boostrap 5
@@ -14,9 +23,9 @@
 
 ## Paso 3. Ingresar al sitio web que se desea visualizar.
     Inicio del sitio privado (al ingresar por primera vez se pedirá crear un usuario):
-        localhost/GameBridge/views/dashboard/
+        localhost/CromblCookies/views/dashboard/
     Inicio del sitio público:
-        localhost/GameBridge/views/public/
+        localhost/CromblCookies/views/public/
 
 Para que funcione PostgreSQL con XAMPP, es necesario acceder a la dirección C:\xampp\php y hacer lo siguiente:
 1. Ubicar y abrir el archvio php.ini

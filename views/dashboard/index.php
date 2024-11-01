@@ -33,7 +33,9 @@ Dashboard_Page::headerLogin('Inicio de sesión');
             <!-- Google reCAPTCHA -->
             <div class="g-recaptcha mb-4" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
 
-            <button type="submit" class="btn w-full text-white login-button" style="background-color: #c93384; width: 100%;" class="rounded-lg py-2">Iniciar sesión</button>
+            <!-- Botón corregido -->
+            <button type="button" id="loginButton" class="btn w-full text-white login-button rounded-lg py-2" style="background-color: #c93384; width: 100%;">Iniciar sesión</button>
+          
           </form>
           <div class="mt-8 text-center">
             <a href="#" class="text-sm" style="color: #d5408e;">Olvidaste tu contraseña?</a>

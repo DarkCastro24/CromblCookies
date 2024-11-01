@@ -28,13 +28,6 @@ Dashboard_Page::headerTemplate('Administrar facturas', 'Facturas');
             </div>
           </div>
         </div>
-
-        <div class="col col-lg-2 col-md-4">
-          <div class="input-field">
-            <!-- Enlace para abrir la caja de dialogo (modal) al momento de crear un nuevo registro -->
-            <button type="button" onclick="openCreateModal()" class="btn btn-dark">Agregar factura</button>
-          </div>
-        </div>
       </div>
     </div> <br><br>
 

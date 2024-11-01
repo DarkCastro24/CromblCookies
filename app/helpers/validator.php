@@ -185,13 +185,13 @@ class Validator
     public function validateAlphabetic($value, $minimum, $maximum)
     {
         // Se verifica el contenido y la longitud de acuerdo con la base de datos.
-        if (preg_match('/^[a-zA-ZñÑáÁéÉíÍóÓúÚ\s]{' . $minimum . ',' . $maximum . '}$/', $value)) {
+        if (preg_match('/^[a-zA-ZñÑáÁéÉíÍóÓúÚ\s,]{' . $minimum . ',' . $maximum . '}$/', $value)) {
             return true;
         } else {
             return false;
         }
     }
-
+    
     /*
     *   Método para validar un dato alfanumérico (letras, dígitos y espacios en blanco).
     *

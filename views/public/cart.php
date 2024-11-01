@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas del documento.
 require_once('../../app/helpers/public_page.php');
 // Se imprime la plantilla del encabezado enviando el título de la página web.
-Public_Page::headerTemplate('GameBridge | Carrito', null);
+Public_Page::headerTemplate('CromblCookies | Carrito', null);
 ?>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">

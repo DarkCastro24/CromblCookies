@@ -2,7 +2,7 @@
 // Se incluye la clase con las plantillas del documento.
 require_once('../../app/helpers/public_page.php');
 // Se imprime la plantilla del encabezado enviando el título de la página web.
-Public_Page::headerTemplate('Gamebridge | Categorías', 'Detalle de producto');
+Public_Page::headerTemplate('CromblCookies | Categorías', 'Detalle de producto');
 ?>
 
 <section id="portfolio-details" class="portfolio-details">

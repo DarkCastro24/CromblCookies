@@ -71,34 +71,51 @@ class Dashboard_Page
             </head>
             <body>
         ');
+
         // Se obtiene el nombre del archivo de la página web actual.
         $filename = basename($_SERVER['PHP_SELF']);
-        // Se comprueba si existe una sesión de administrador para mostrar el menú de opciones, de lo contrario se muestra un menú vacío.
+        // Se comprueba si existe una sesión de administrador para mostrar el menú de opciones.
         if (isset($_SESSION['idusuario'])) {
-            // Se verifica si la página web actual es diferente a index.php (Iniciar sesión) y a register.php (Crear primer usuario) para no iniciar sesión otra vez, de lo contrario se direcciona a main.php
+            // Se verifica si la página web actual es diferente a index.php y register.php para no iniciar sesión otra vez.
             if ($filename != 'index.php' && $filename != 'register.php') {
+                // Verificación del tipo de usuario
+                $userType = $_SESSION['tipo'];
+
+                // Impresión de la estructura del header y el menú.
                 print('
-                        <header id="header" class="d-flex align-items-center">
-                            <div class="container d-flex justify-content-between">
-                                <div class="logo">
-                                    <h1 class="text-light"><a href="main.php">GameBridge</a></h1>
-                                </div>
-                                <nav id="navbar" class="navbar">
-                                    <ul>
-                                    <li><a class="nav-link scrollto " href="usuarios.php">Usuarios</a></li>
-                                    <li><a class="nav-link scrollto " href="clientes.php">Clientes</a></li>
-                                    <li><a class="nav-link scrollto" href="categorias.php">Categorias</a></li>
-                                    <li><a class="nav-link scrollto" href="productos.php">Productos</a></li>
-                                    <li><a class="nav-link scrollto" href="facturas.php">Facturas</a></li>
-                                    <li><a onclick="logOut()" class="nav-link scrollto">Usuario: <b>' . $_SESSION['usuario'] . '</b><i class="fa fa-user" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                    <i class="bi bi-list mobile-nav-toggle"></i>
-                                </nav>
+                    <header id="header" class="d-flex align-items-center">
+                        <div class="container d-flex justify-content-between">
+                            <div class="logo">
+                                <h1 class="text-light"><a href="main.php">GameBridge</a></h1>
                             </div>
-                     </header>    
-                    <main id="main">
-                        <section class="breadcrumbs">
-                            <div class="container">');
+                            <nav id="navbar" class="navbar">
+                                <ul>');
+
+                // Condicional para mostrar las opciones según el tipo de usuario
+                if ($userType === 'ROOT') {
+                    print('<li><a class="nav-link scrollto" href="usuarios.php">Usuarios</a></li>');
+                    print('<li><a class="nav-link scrollto" href="clientes.php">Clientes</a></li>');
+                } elseif ($userType === 'Administrador') {
+                    // Redireccionar si el administrador intenta acceder a usuarios.php o clientes.php
+                    if ($filename == 'usuarios.php' || $filename == 'clientes.php') {
+                        header('location: main.php');
+                    }
+                }
+
+                // Opciones accesibles para ambos tipos de usuario
+                print('
+                    <li><a class="nav-link scrollto" href="categorias.php">Categorias</a></li>
+                    <li><a class="nav-link scrollto" href="productos.php">Productos</a></li>
+                    <li><a class="nav-link scrollto" href="facturas.php">Facturas</a></li>
+                    <li><a onclick="logOut()" class="nav-link scrollto">Usuario: <b>' . $_SESSION['usuario'] . '</b><i class="fa fa-user" aria-hidden="true"></i></a></li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav>
+                </div>
+            </header>    
+            <main id="main">
+                <section class="breadcrumbs">
+                    <div class="container">');
 
                 if ($filename != 'main.php') {
                     print('<div class="d-flex justify-content-between align-items-center">
@@ -114,7 +131,7 @@ class Dashboard_Page
                     print('<div class="d-flex justify-content-between align-items-center">
                         <h2>Bienvenido al sistema ' . $_SESSION['usuario'] . '</h2>
                         <ol>
-                            <li><a href="main.php">Pagina principal</a></li>
+                            <li><a href="main.php">Página principal</a></li>
                             <li>Tipo usuario: ' . $_SESSION['tipo'] . '</li>
                         </ol>
                         </div>

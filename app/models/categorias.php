@@ -33,13 +33,15 @@ class Categorias extends Validator
 
     public function setDescripcion($value)
     {
-        if ($this->validateAlphanumeric($value, 1, 150)) {
-            $this->descripcion = $value;
+        $this->descripcion = trim($value);
+
+        if (preg_match('/^[a-zA-ZñÑáÁéÉíÍóÓúÚ\s,]{1,500}$/', $this->descripcion)) {
             return true;
         } else {
             return false;
         }
     }
+
 
     public function setImagen($file)
     {
