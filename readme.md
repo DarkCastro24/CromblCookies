@@ -1,4 +1,4 @@
-# Proyecto de Software
+# Proyecto de Software CromblCookies
 
 Este proyecto fue desarrollado como parte de la asignatura Seguridad en Entornos de Desarrollo.
 
